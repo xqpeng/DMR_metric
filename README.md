@@ -40,7 +40,7 @@ Step 2: Format and sort the DMR set predicted by different DMR detection tools
       
 Step 3: Calculate Qn, Ql, and Qf under different threshold for each DMR set
      
-     Commands: perl calcluate_QnQl.pl list_formated_DMR_files merged_methylation_bedGraph_A_B
+     Commands: perl calcluate_QnQlQf.pl list_formated_DMR_files merged_methylation_bedGraph_A_B
      
      Input: 1. a file containing the formated DMR files of different methods 
       
