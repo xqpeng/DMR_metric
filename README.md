@@ -1,6 +1,8 @@
 # DMR_metric
 This project provides the service for calculating two metrics (Qn and Ql) for DMR sets predicted by different methods.
 In the programs of calculating Qn and Ql, the methylation profiles of samples are needed, which are used to recalculate the methylation levels of CpGs in DMRs. For all the DMRs predicted by different methods, the methylation differences of DMRs are recalculated based on the methylation profiles of samples also. 
+
+
 There are two programs of preprocessing before calculating Qn and Ql.
 
 
