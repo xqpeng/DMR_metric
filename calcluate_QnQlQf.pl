@@ -98,9 +98,9 @@ sub print_result{
 	my $Qn_results="Qn\t".$title_line."\n";
 	my $Ql_results="Ql\t".$title_line."\n";
 	my $Qf_results="Qf\t".$title_line."\n";
-	my $DMR_results="Ratio\t".$title_line."\n";
+	my $DMR_results="Number\t".$title_line."\n";
 	open(OUT1,">>QnQlQf_original.txt")or die $!;
-	for(my $i=0;$i<1;$i+=0.1){
+	for(my $i=0.1;$i<1;$i+=0.1){
 		$Qn_results.=$i;
 		$Ql_results.=$i;
 		$Qf_results.=$i;
@@ -291,7 +291,7 @@ sub interval_statistical{
 	my $sum_ratio=0;
 	my @i_value=sort{$a<=>$b}keys(%count_interval);
 	print "@i_value\n";
-	for(my $i=0.9;$i>=0;$i=$i-0.1){
+	for(my $i=0.9;$i>=0.1;$i=$i-0.1){
 		if(!exists($count_interval{$i})){
 			$count_interval{$i}=0;
 			$length_interval{$i}=0;
@@ -313,11 +313,9 @@ sub interval_statistical{
 			$Qf{$file}{$i}=2*$Ql{$file}{$i}*$Qn{$file}{$i}/($Qn{$file}{$i}+$Ql{$file}{$i});
 		}
 		$DMR_th{$file}{$i}=$DMR_th{$file}{$i}+$DMR_th{$file}{$i+0.1};
-		if($DMR_th{$file}{$i}>0){
-	#		print "$file\t$i\t$DMR_th{$file}{$i}\t$total_count\t$total_length\t$sum_ratio\t$Qn{$file}{$i}\t$Ql{$file}{$i}\n";
-		}
 		
 		
 	}
 }
+
 
